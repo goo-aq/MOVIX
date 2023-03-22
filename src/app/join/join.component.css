@@ -1,0 +1,10 @@
+.join-card {
+  background: rgba(0, 0, 0, 0.4);
+  height: 85vh;
+}
+
+img {
+  z-index: -9999;
+  object-fit: cover;
+  transform: scale(1.25) translateY(-10%);
+}
