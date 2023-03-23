@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { JoinComponent } from './join/join.component';
+import { EnjoyComponent } from './enjoy/enjoy.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     FooterComponent,
-    JoinComponent
+    JoinComponent,
+    EnjoyComponent
   ],
   imports: [
     BrowserModule,
