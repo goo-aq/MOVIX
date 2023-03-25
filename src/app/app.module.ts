@@ -7,6 +7,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { JoinComponent } from './join/join.component';
 import { EnjoyComponent } from './enjoy/enjoy.component';
+import { DownloadComponent } from './download/download.component';
+import { WatchComponent } from './watch/watch.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { EnjoyComponent } from './enjoy/enjoy.component';
     NavbarComponent,
     FooterComponent,
     JoinComponent,
-    EnjoyComponent
+    EnjoyComponent,
+    DownloadComponent,
+    WatchComponent
   ],
   imports: [
     BrowserModule,
