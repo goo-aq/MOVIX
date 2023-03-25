@@ -9,6 +9,7 @@ import { JoinComponent } from './join/join.component';
 import { EnjoyComponent } from './enjoy/enjoy.component';
 import { DownloadComponent } from './download/download.component';
 import { WatchComponent } from './watch/watch.component';
+import { KidsComponent } from './kids/kids.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { WatchComponent } from './watch/watch.component';
     JoinComponent,
     EnjoyComponent,
     DownloadComponent,
-    WatchComponent
+    WatchComponent,
+    KidsComponent
   ],
   imports: [
     BrowserModule,
