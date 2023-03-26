@@ -1,0 +1,11 @@
+ul {
+  list-style-type: none;
+}
+li {
+  font-size: 0.875rem;
+  font-weight: 400;
+  padding-bottom: 5%;
+}
+a:not(.dropdown a) {
+  color: rgba(255, 255, 255, 0.7) !important;
+}

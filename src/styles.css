@@ -22,7 +22,7 @@ body {
 .bg-red {
   background-color: #e5030c !important;
 }
-.btn:hover {
+.btn:not(.lang):hover {
   transition-timing-function: cubic-bezier(0.5, 0, 0.1, 1) !important;
   background: rgb(193, 17, 25) !important;
 }
