@@ -1,0 +1,21 @@
+.col-md-8 .accordion{
+    --bs-accordion-bg: black !important;
+}
+.accordion-button,.accordion-body{
+    color: white;
+    background-color: #2D2D2D;
+    box-shadow: none !important;
+    margin-bottom: 2px;
+}
+.accordion-button:hover{
+    background-color: #4E4E4E;
+}
+.accordion-button::after{
+    filter: brightness(0) invert(1);
+}
+.accordion-item{
+    border: none !important;
+}
+.accordion-item, .accordion-button{
+    border-radius: 0 !important;
+}

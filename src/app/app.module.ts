@@ -10,6 +10,7 @@ import { EnjoyComponent } from './enjoy/enjoy.component';
 import { DownloadComponent } from './download/download.component';
 import { WatchComponent } from './watch/watch.component';
 import { KidsComponent } from './kids/kids.component';
+import { FaqComponent } from './faq/faq.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { KidsComponent } from './kids/kids.component';
     EnjoyComponent,
     DownloadComponent,
     WatchComponent,
-    KidsComponent
+    KidsComponent,
+    FaqComponent
   ],
   imports: [
     BrowserModule,
