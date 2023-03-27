@@ -1,0 +1,22 @@
+.container {
+  --bs-bg-opacity: 0.5;
+}
+h6 {
+  height: 40px;
+}
+.container::after {
+  width: 40%;
+  height: 100%;
+  right: 0;
+  top: 0;
+  content: "";
+  position: absolute;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 1) 80%
+  );
+}
+.container:hover::after {
+  width: 0;
+}

@@ -11,7 +11,10 @@ import { DownloadComponent } from './download/download.component';
 import { WatchComponent } from './watch/watch.component';
 import { KidsComponent } from './kids/kids.component';
 import { FaqComponent } from './faq/faq.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { MoviesComponent } from './movies/movies.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,11 +25,15 @@ import { FaqComponent } from './faq/faq.component';
     DownloadComponent,
     WatchComponent,
     KidsComponent,
-    FaqComponent
+    FaqComponent,
+    DashboardComponent,
+    MoviesComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
