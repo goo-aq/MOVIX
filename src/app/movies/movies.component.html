@@ -8,13 +8,13 @@
     </h3>
     <div class="row overflow-scroll flex-nowrap pb-5 position-relative">
       <div class="col-6 col-md-2 text-center" *ngFor="let movie of movies">
-        <a class="text-white text-decoration-none" href="#">
+        <a class="text-white text-decoration-none" routerLink="/movie/{{movie.id}}">
           <img
             src="https://image.tmdb.org/t/p/w500/{{ movie.poster_path }}"
             alt=""
             class="rounded w-100"
           />
-          <h6 class="mt-2">{{ movie.title }}</h6>
+          <h6 class="mt-2 overflow-hidden">{{ movie.title }}</h6>
           <span class="bg-red p-1 rounded"
             >{{ movie.vote_average | number : "1.0-1" }}
             <i class="fa-solid fa-star"></i

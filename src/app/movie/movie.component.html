@@ -1,0 +1,93 @@
+<div
+  class="cover position-absolute"
+  [ngStyle]="{ 'background-image': 'url(' + background + ')' }"
+></div>
+<div class="movie vh-100 container">
+  <div class="row">
+    <div class="col-md-3 position-relative p-0">
+      <img
+        src="https://image.tmdb.org/t/p/w500/{{ movie.poster_path }}"
+        alt=""
+        class="rounded w-100"
+      />
+      <button
+        class="hplay position-absolute top-0 start-0 h-100 w-100 border-0 rounded"
+      >
+        <i
+          class="fa-solid fa-circle-play position-absolute z-3 red bg-white rounded-circle position-absolute translate-middle"
+        ></i>
+      </button>
+    </div>
+    <div class="col-md-6 ms-3">
+      <div class="d-flex flex-column pt-3">
+        <div class="col">
+          <h3 class="fw-bold">
+            {{ movie.title }}
+            <br />
+            <span>{{ movie.release_date | date : "yyyy" }}</span>
+          </h3>
+          <span class="bg-red rounded p-1"
+            >{{ movie.vote_average | number : "1.0-1" }}
+            <i class="fa-solid fa-star"></i
+          ></span>
+        </div>
+        <div class="col rate pt-5">
+          <button class="bg-transparent text-white border-0">
+            <i class="fa-regular fa-star"></i>
+          </button>
+          <button class="bg-transparent text-white border-0">
+            <i class="fa-regular fa-star"></i>
+          </button>
+          <button class="bg-transparent text-white border-0">
+            <i class="fa-regular fa-star"></i>
+          </button>
+          <button class="bg-transparent text-white border-0">
+            <i class="fa-regular fa-star"></i>
+          </button>
+          <button class="bg-transparent text-white border-0">
+            <i class="fa-regular fa-star"></i>
+          </button>
+        </div>
+        <div class="col pt-5">
+          <p class="fs-5">{{ movie.overview }}</p>
+        </div>
+        <div class="col pt-5">
+          <button class="btn bg-red text-white">
+            <i class="fa-solid fa-circle-play pe-2"></i>Play
+          </button>
+          <button class="btn bg-red text-white ms-2">
+            <i class="fa-solid fa-bookmark pe-2"></i>Watch Later
+          </button>
+          <button class="btn bg-red text-white ms-2">
+            <i class="fa-solid fa-circle-down pe-2"></i>Download
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="recommend position-relative">
+    <div class="mt-2"><span>Recommendations</span></div>
+    <div class="row overflow-scroll flex-nowrap py-2 position-relative">
+      <div
+        class="col-6 col-md-1 text-center d-flex flex-column"
+        *ngFor="let movie of recommendations"
+      >
+        <a
+          class="text-white text-decoration-none"
+          routerLink="/movie/{{ movie.id }}"
+        >
+          <img
+            src="https://image.tmdb.org/t/p/w500/{{ movie.poster_path }}"
+            alt=""
+            class="rounded w-100"
+          />
+          <h6 class="mt-2 overflow-hidden">{{ movie.title }}</h6>
+          <span class="bg-red p-1 rounded"
+            >{{ movie.vote_average | number : "1.0-1" }}
+            <i class="fa-solid fa-star"></i
+          ></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
