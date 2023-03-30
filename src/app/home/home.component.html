@@ -1,0 +1,32 @@
+<div class="py-5">
+  <div class="mb-4 wlcard my-5">
+    <div class="container">
+      <form class="d-flex" role="search">
+        <input
+          class="form-control me-2"
+          type="search"
+          placeholder="feeling bored? type anything"
+          aria-label="Search"
+        />
+        <button class="btn text-white bg-red" type="submit">Search</button>
+      </form>
+      <div class="results mt-5"></div>
+    </div>
+  </div>
+  <div class="wlcard">
+    <mat-tab-group
+      dynamicHeight
+      mat-stretch-tabs="false"
+      mat-align-tabs="center"
+    >
+      <mat-tab label="Movies"
+        ><div>
+          <app-movies></app-movies></div
+      ></mat-tab>
+      <mat-tab label="TV Shows"
+        ><div>
+          <app-shows></app-shows></div
+      ></mat-tab>
+    </mat-tab-group>
+  </div>
+</div>

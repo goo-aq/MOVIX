@@ -4,6 +4,7 @@
   background-size: cover;
   opacity: 0.3;
   z-index: -9999;
+  
 }
 .movie {
   padding-top: 8rem
@@ -20,4 +21,3 @@
 h6 {
   height: 6vh;
 }
-

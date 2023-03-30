@@ -22,18 +22,18 @@ body {
 .bg-red {
   background-color: #e5030c !important;
 }
-.red{
+.red {
   color: #e5030c !important;
 }
 .btn:not(.lang):hover {
   background: rgb(193, 17, 25) !important;
 }
 
-h1 {
-  font-size: 3rem;
-  font-weight: 900;
+.hover{
+  transition: transform 0.5s;
 }
-p {
-  font-size: 1.5rem;
-  font-weight: 400;
+.hover:hover{
+  transform: translateY(-10px);
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

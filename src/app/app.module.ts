@@ -11,10 +11,19 @@ import { WatchComponent } from './watch/watch.component';
 import { KidsComponent } from './kids/kids.component';
 import { FaqComponent } from './faq/faq.component';
 import { HttpClientModule } from '@angular/common/http';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { MoviesComponent } from './movies/movies.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { MovieComponent } from './movie/movie.component';
+import { homeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatTabsModule} from '@angular/material/tabs';
+import { FormsModule } from '@angular/forms';
+import { ShowsComponent } from './shows/shows.component';
+import { ShowComponent } from './show/show.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,15 +35,23 @@ import { MovieComponent } from './movie/movie.component';
     WatchComponent,
     KidsComponent,
     FaqComponent,
-    DashboardComponent,
     MoviesComponent,
     WelcomeComponent,
-    MovieComponent
+    MovieComponent,
+    homeComponent,
+    LoginComponent,
+    RegisterComponent,
+    NotFoundComponent,
+    ShowsComponent,
+    ShowComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    MatTabsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -2,11 +2,11 @@
   class="cover position-fixed"
   [ngStyle]="{ 'background-image': 'url(' + background + ')' }"
 ></div>
-<div class="movie container">
+<div class="show container">
   <div class="row">
-    <div class="col-md-3 position-relative p-0 align-self-start">
+    <div class="col-md-3 position-relative p-0 align-self-center">
       <img
-        src="https://image.tmdb.org/t/p/w500/{{ movie.poster_path }}"
+        src="https://image.tmdb.org/t/p/w500/{{ show.poster_path }}"
         alt=""
         class="rounded w-100"
       />
@@ -22,12 +22,12 @@
       <div class="d-flex flex-column pt-3 gap-5">
         <div class="col">
           <h3 class="fw-bold">
-            {{ movie.title }}
+            {{ show.name }}
             <br />
-            <span>{{ movie.release_date | date : "yyyy" }}</span>
+            <span>{{ show.release_date | date : "yyyy" }}</span>
           </h3>
           <span class="bg-red rounded p-1"
-            >{{ movie.vote_average | number : "1.0-1" }}
+            >{{ show.vote_average | number : "1.0-1" }}
             <i class="fa-solid fa-star"></i
           ></span>
         </div>
@@ -49,7 +49,7 @@
           </button>
         </div>
         <div class="col">
-          <p class="fs-5">{{ movie.overview }}</p>
+          <p class="fs-5">{{ show.overview }}</p>
         </div>
         <div class="col">
           <button class="btn bg-red text-white">
@@ -70,20 +70,20 @@
     <div class="row overflow-scroll flex-nowrap py-4 position-relative">
       <div
         class="hover col-6 col-md-2 col-lg-1 text-center d-flex flex-column"
-        *ngFor="let movie of recommendations"
+        *ngFor="let show of recommendations"
       >
         <a
           class="text-white text-decoration-none"
-          routerLink="/movie/{{ movie.id }}"
+          routerLink="/show/{{ show.id }}"
         >
           <img
-            src="https://image.tmdb.org/t/p/w500/{{ movie.poster_path }}"
+            src="https://image.tmdb.org/t/p/w500/{{ show.poster_path }}"
             alt=""
             class="rounded w-100"
           />
-          <h6 class="mt-2 overflow-hidden">{{ movie.title }}</h6>
+          <h6 class="mt-2 overflow-hidden">{{ show.name }}</h6>
           <span class="bg-red p-1 rounded"
-            >{{ movie.vote_average | number : "1.0-1" }}
+            >{{ show.vote_average | number : "1.0-1" }}
             <i class="fa-solid fa-star"></i
           ></span>
         </a>

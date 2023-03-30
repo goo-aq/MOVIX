@@ -1,26 +1,101 @@
-<div class="wlcard my-5">
-  <div class="text-center mb-5">
-    <h2>Movies <i class="fa-solid fa-film"></i></h2>
+
+<div class="container bg-dark rounded px-5 pt-5 mb-5 position-relative h-100 mt-5">
+  <h3>Top Rated <i class="fa-solid fa-star"></i></h3>
+  <div class="row overflow-scroll flex-nowrap py-5 position-relative">
+    <div
+      class="hover col-6 col-md-2 text-center"
+      *ngFor="let movie of topRatedMovies"
+    >
+      <a
+        class="text-white text-decoration-none"
+        routerLink="/movie/{{ movie.id }}"
+      >
+        <img
+          src="https://image.tmdb.org/t/p/w500/{{ movie.poster_path }}"
+          alt=""
+          class="rounded w-100"
+        />
+        <h6 class="mt-2 overflow-hidden">{{ movie.title }}</h6>
+        <span class="bg-red p-1 rounded"
+          >{{ movie.vote_average | number : "1.0-1" }}
+          <i class="fa-solid fa-star"></i
+        ></span>
+      </a>
+    </div>
   </div>
-  <div class="container bg-dark rounded px-5 pt-5 position-relative h-100">
-    <h3 class="mb-5">
-      Trending today <i class="fa-solid fa-arrow-trend-up"></i>
-    </h3>
-    <div class="row overflow-scroll flex-nowrap pb-5 position-relative">
-      <div class="col-6 col-md-2 text-center" *ngFor="let movie of movies">
-        <a class="text-white text-decoration-none" routerLink="/movie/{{movie.id}}">
-          <img
-            src="https://image.tmdb.org/t/p/w500/{{ movie.poster_path }}"
-            alt=""
-            class="rounded w-100"
-          />
-          <h6 class="mt-2 overflow-hidden">{{ movie.title }}</h6>
-          <span class="bg-red p-1 rounded"
-            >{{ movie.vote_average | number : "1.0-1" }}
-            <i class="fa-solid fa-star"></i
-          ></span>
-        </a>
-      </div>
+</div>
+<div class="container bg-dark rounded px-5 pt-5 mb-5 position-relative h-100">
+  <h3>Trending today <i class="fa-solid fa-chart-simple"></i></h3>
+  <div class="row overflow-scroll flex-nowrap py-5 position-relative">
+    <div
+      class="hover col-6 col-md-2 text-center"
+      *ngFor="let movie of trendMoviesDay"
+    >
+      <a
+        class="text-white text-decoration-none"
+        routerLink="/movie/{{ movie.id }}"
+      >
+        <img
+          src="https://image.tmdb.org/t/p/w500/{{ movie.poster_path }}"
+          alt=""
+          class="rounded w-100"
+        />
+        <h6 class="mt-2 overflow-hidden">{{ movie.title }}</h6>
+        <span class="bg-red p-1 rounded"
+          >{{ movie.vote_average | number : "1.0-1" }}
+          <i class="fa-solid fa-star"></i
+        ></span>
+      </a>
+    </div>
+  </div>
+</div>
+<div class="container bg-dark rounded px-5 pt-5 mb-5 position-relative h-100">
+  <h3>Trending This Week <i class="fa-solid fa-arrow-trend-up"></i></h3>
+  <div class="row overflow-scroll flex-nowrap py-5 position-relative">
+    <div
+      class="hover col-6 col-md-2 text-center"
+      *ngFor="let movie of trendMoviesWeek"
+    >
+      <a
+        class="text-white text-decoration-none"
+        routerLink="/movie/{{ movie.id }}"
+      >
+        <img
+          src="https://image.tmdb.org/t/p/w500/{{ movie.poster_path }}"
+          alt=""
+          class="rounded w-100"
+        />
+        <h6 class="mt-2 overflow-hidden">{{ movie.title }}</h6>
+        <span class="bg-red p-1 rounded"
+          >{{ movie.vote_average | number : "1.0-1" }}
+          <i class="fa-solid fa-star"></i
+        ></span>
+      </a>
+    </div>
+  </div>
+</div>
+<div class="container bg-dark rounded px-5 pt-5 mb-5 position-relative h-100">
+  <h3>Popular <i class="fa-solid fa-fire"></i></h3>
+  <div class="row overflow-scroll flex-nowrap py-5 position-relative">
+    <div
+      class="hover col-6 col-md-2 text-center"
+      *ngFor="let movie of popMovies"
+    >
+      <a
+        class="text-white text-decoration-none"
+        routerLink="/movie/{{ movie.id }}"
+      >
+        <img
+          src="https://image.tmdb.org/t/p/w500/{{ movie.poster_path }}"
+          alt=""
+          class="rounded w-100"
+        />
+        <h6 class="mt-2 overflow-hidden">{{ movie.title }}</h6>
+        <span class="bg-red p-1 rounded"
+          >{{ movie.vote_average | number : "1.0-1" }}
+          <i class="fa-solid fa-star"></i
+        ></span>
+      </a>
     </div>
   </div>
 </div>

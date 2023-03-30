@@ -1,0 +1,33 @@
+.mat-mdc-tab .mdc-tab__text-label,
+.mat-mdc-tab-link .mdc-tab__text-label {
+  color: white;
+  opacity: 0.5;
+  font-size: 50px;
+  font-weight: 500;
+
+}
+.mat-mdc-tab:first-of-type .mdc-tab__text-label:after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  padding-left: 10px;
+  font-size: xx-large;
+  content: "\f008";
+}
+.mat-mdc-tab:last-of-type .mdc-tab__text-label:after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  padding-left: 10px;
+  font-size: xx-large;
+  content: "\f26c";
+}
+.mat-mdc-tab:not(.mat-mdc-tab-disabled).mdc-tab--active .mdc-tab__text-label,
+.mat-mdc-tab-link:not(.mat-mdc-tab-disabled).mdc-tab--active
+  .mdc-tab__text-label {
+  color: white;
+  opacity: 1;
+}
+.mat-mdc-tab:not(.mat-mdc-tab-disabled) .mdc-tab-indicator__content--underline,
+.mat-mdc-tab-link:not(.mat-mdc-tab-disabled)
+  .mdc-tab-indicator__content--underline {
+  border-color: var(--mdc-tab-indicator-active-indicator-color, white);
+}

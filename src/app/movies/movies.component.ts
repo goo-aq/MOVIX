@@ -8,10 +8,23 @@ import { OnInit } from '@angular/core';
 })
 export class MoviesComponent implements OnInit {
   constructor(private _MoviesService: MoviesService) {}
-  movies: any[] = [];
+  trendMoviesDay: any[] = [];
+  trendMoviesWeek: any[] = [];
+  popMovies: any[] = [];
+  topRatedMovies: any[] = [];
+
   ngOnInit() {
     this._MoviesService.getTrendingDay().subscribe({
-      next: (data) => (this.movies = data.results),
+      next: (data) => (this.trendMoviesDay = data.results),
+    });
+    this._MoviesService.getTrendingWeek().subscribe({
+      next: (data) => (this.trendMoviesWeek = data.results),
+    });
+    this._MoviesService.getPopular().subscribe({
+      next: (data) => (this.popMovies = data.results),
+    });
+    this._MoviesService.getPopular().subscribe({
+      next: (data) => (this.topRatedMovies = data.results),
     });
   }
 }
