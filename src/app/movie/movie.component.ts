@@ -19,9 +19,8 @@ export class MovieComponent implements OnInit {
     this.id = this._ActivatedRoute.snapshot.paramMap.get('id');
     this._ActivatedRoute.params.subscribe((param) => {
       if(this.id!=param['id']){
-      console.log(this.id);
       this.id = param['id'];
-      console.log(this.id);}
+      }
       this.load();
     });
     this.load();

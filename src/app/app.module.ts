@@ -20,9 +20,10 @@ import { RegisterComponent } from './register/register.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTabsModule} from '@angular/material/tabs';
-import { FormsModule } from '@angular/forms';
 import { ShowsComponent } from './shows/shows.component';
 import { ShowComponent } from './show/show.component';
+import { ResultsComponent } from './results/results.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { ShowComponent } from './show/show.component';
     RegisterComponent,
     NotFoundComponent,
     ShowsComponent,
-    ShowComponent
+    ShowComponent,
+    ResultsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,74 @@
+<div class="pt-5 searchR">
+  <div class="wlcard mt-5">
+    <div class="text-center mb-5">
+      <h2>Search Results <i class="fa-solid fa-magnifying-glass"></i></h2>
+    </div>
+
+    <mat-tab-group
+      dynamicHeight
+      mat-stretch-tabs="false"
+      mat-align-tabs="center"
+    >
+      <mat-tab label="Movies"
+        ><div>
+          <div
+            class="container bg-dark rounded px-5 pt-5 mb-5 position-relative h-100 mt-5"
+          >
+            <div class="row overflow-scroll flex-nowrap py-5 position-relative">
+              <div
+                class="hover col-6 col-md-2 text-center"
+                *ngFor="let movie of movResults"
+              >
+                <a
+                  class="text-white text-decoration-none"
+                  routerLink="/movie/{{ movie.id }}"
+                >
+                  <img
+                    src="https://image.tmdb.org/t/p/w500/{{
+                      movie.poster_path
+                    }}"
+                    alt=""
+                    class="rounded w-100"
+                  />
+                  <h6 class="mt-2 overflow-hidden">{{ movie.title }}</h6>
+                  <span class="bg-red p-1 rounded"
+                    >{{ movie.vote_average | number : "1.0-1" }}
+                    <i class="fa-solid fa-star"></i
+                  ></span>
+                </a>
+              </div>
+            </div>
+          </div></div
+      ></mat-tab>
+      <mat-tab label="TV Shows"
+        ><div>
+          <div
+            class="container bg-dark rounded px-5 pt-5 mb-5 position-relative h-100 mt-5"
+          >
+            <div class="row overflow-scroll flex-nowrap py-5 position-relative">
+              <div
+                class="hover col-6 col-md-2 text-center"
+                *ngFor="let show of showResults"
+              >
+                <a
+                  class="text-white text-decoration-none"
+                  routerLink="/show/{{ show.id }}"
+                >
+                  <img
+                    src="https://image.tmdb.org/t/p/w500/{{ show.poster_path }}"
+                    alt=""
+                    class="rounded w-100"
+                  />
+                  <h6 class="mt-2 overflow-hidden">{{ show.name }}</h6>
+                  <span class="bg-red p-1 rounded"
+                    >{{ show.vote_average | number : "1.0-1" }}
+                    <i class="fa-solid fa-star"></i
+                  ></span>
+                </a>
+              </div>
+            </div>
+          </div></div
+      ></mat-tab>
+    </mat-tab-group>
+  </div>
+</div>

@@ -29,11 +29,17 @@ body {
   background: rgb(193, 17, 25) !important;
 }
 
-.hover{
+.hover {
   transition: transform 0.5s;
 }
-.hover:hover{
+.hover:hover {
   transform: translateY(-10px);
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

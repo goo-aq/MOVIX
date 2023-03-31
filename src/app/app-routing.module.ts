@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { homeComponent } from './home/home.component';
 import { MovieComponent } from './movie/movie.component';
+import { ResultsComponent } from './results/results.component';
 import { ShowComponent } from './show/show.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 
@@ -10,6 +11,7 @@ const routes: Routes = [
   { path: 'home', component: homeComponent },
   { path: 'movie/:id', component: MovieComponent },
   { path: 'show/:id', component: ShowComponent },
+  { path: 'results/:term', component: ResultsComponent },
   { path: '', redirectTo: 'WelcomeComponent', pathMatch: 'full' },
 
 
