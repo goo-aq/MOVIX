@@ -31,7 +31,7 @@ export class ShowComponent implements OnInit {
       next: (data) => {
         this.show = data;
         this.background =
-          'https://image.tmdb.org/t/p/original/' + this.show.backdrop_path;
+          'https://image.tmdb.org/t/p/original' + this.show.backdrop_path;
       },
     });
     this._ShowsService.getRecommendations(this.id).subscribe({

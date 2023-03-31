@@ -1,1 +1,69 @@
-<p>register works!</p>
+<div class="py-5">
+  <div class="wlcard mt-5">
+    <div *ngIf="!done" class="row justify-content-center">
+      <div class="col-md-4">
+        <form
+          [formGroup]="registerForm"
+          (ngSubmit)="submitForm(registerForm)"
+          class="d-flex flex-column"
+        >
+          <div class="row mb-3">
+            <label for="name" class="col-sm-2 col-form-label">Name</label>
+            <div class="col-sm-10">
+              <input
+                type="text"
+                class="form-control"
+                id="name"
+                formControlName="name"
+              />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="email" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-10">
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                formControlName="email"
+              />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="password" class="col-sm-2 col-form-label"
+              >Password</label
+            >
+            <div class="col-sm-10">
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                formControlName="password"
+              />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="cPassword" class="col-sm-2 col-form-label"
+              >Password Confirm</label
+            >
+            <div class="col-sm-10">
+              <input
+                type="password"
+                class="form-control"
+                id="cpassword"
+                formControlName="cPassword"
+              />
+            </div>
+          </div>
+          <div *ngIf="emailExist" class="alert alert-danger">{{ emailExist }}</div>
+          <div class="alert alert-danger" *ngFor="let err of errList">{{ err }}</div>
+          <button type="submit" class="btn bg-red text-white">Register</button>
+        </form>
+      </div>
+    </div>
+    <div *ngIf="done" class="text-center">
+      <div class="alert alert-success">Congratulations</div>
+      <div class="alert alert-success">Please check your inbox and verfiy your email</div>
+    </div>
+  </div>
+</div>
