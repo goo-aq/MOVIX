@@ -12,19 +12,38 @@ export class MoviesComponent implements OnInit {
   trendMoviesWeek: any[] = [];
   popMovies: any[] = [];
   topRatedMovies: any[] = [];
-
+  isLoadingTD: boolean = false;
+  isLoadingTW: boolean = false;
+  isLoadingP: boolean = false;
+  isLoadingR: boolean = false;
   ngOnInit() {
+    this.isLoadingTD = true;
+    this.isLoadingTW = true;
+    this.isLoadingP = true;
+    this.isLoadingR = true;
     this._MoviesService.getTrendingDay().subscribe({
-      next: (data) => (this.trendMoviesDay = data.results),
+      next: (data) => {
+        this.isLoadingTD = false;
+        this.trendMoviesDay = data.results;
+      },
     });
     this._MoviesService.getTrendingWeek().subscribe({
-      next: (data) => (this.trendMoviesWeek = data.results),
+      next: (data) => {
+        this.isLoadingTW = false;
+        this.trendMoviesWeek = data.results;
+      },
     });
     this._MoviesService.getPopular().subscribe({
-      next: (data) => (this.popMovies = data.results),
+      next: (data) => {
+        this.isLoadingP = false;
+        this.popMovies = data.results;
+      },
     });
-    this._MoviesService.getPopular().subscribe({
-      next: (data) => (this.topRatedMovies = data.results),
+    this._MoviesService.getTopRated().subscribe({
+      next: (data) => {
+        this.isLoadingR = false;
+        this.topRatedMovies = data.results;
+      },
     });
   }
 }

@@ -13,27 +13,32 @@ export class LoginComponent {
     email: new FormControl(null),
     password: new FormControl(null),
   });
+  isLoading:boolean=false;
   emailVerify: string = '';
   err: boolean = false;
   submitForm(data: FormGroup) {
+    this.isLoading=true;
     this._AuthService.login(data.value).subscribe({
       next: (res) => {
-        this.emailVerify='';
-        this.err=false;
+        this.isLoading=false;
+        this.emailVerify = '';
+        this.err = false;
         console.log(res);
-        if(res.message=='success'){
-        if (res.token) {
-          localStorage.setItem('mToken', res.token);
-          this._AuthService.currentUser();
-          this._Router.navigate(['/home']);
-        }} else {
+        if (res.message == 'success') {
+          if (res.token) {
+            localStorage.setItem('mToken', res.token);
+            this._AuthService.currentUser();
+            this._Router.navigate(['/home']);
+          }
+        } else {
           this.err = true;
         }
       },
       error: (err) => {
-        this.err=false;
+        this.isLoading=false;
+        this.err = false;
         if (err.status == 403) {
-          this.emailVerify = 'Please verify your email';
+          this.emailVerify = 'Please verify your email!';
         }
       },
     });

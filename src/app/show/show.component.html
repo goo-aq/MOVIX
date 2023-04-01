@@ -1,9 +1,10 @@
 <div
+  *ngIf="!isLoading1"
   class="cover position-fixed"
   [ngStyle]="{ 'background-image': 'url(' + background + ')' }"
 ></div>
 <div class="show container">
-  <div class="row">
+  <div *ngIf="!isLoading1" class="row">
     <div class="col-md-3 position-relative p-0 align-self-center">
       <img
         src="https://image.tmdb.org/t/p/w500{{ show.poster_path }}"
@@ -65,7 +66,8 @@
       </div>
     </div>
   </div>
-  <div class="recommend position-relative">
+  <app-spinner *ngIf="isLoading1 || isLoading2"></app-spinner>
+  <div *ngIf="!isLoading2" class="recommend position-relative">
     <div class="mt-2"><span>Recommendations</span></div>
     <div class="row overflow-scroll flex-nowrap py-4 position-relative">
       <div

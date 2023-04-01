@@ -5,7 +5,7 @@
         <h2>Register</h2>
       </div>
       <div class="col-md-4">
-        <form [formGroup]="registerForm" (ngSubmit)="submitForm(registerForm)">
+        <form *ngIf="!isLoading" [formGroup]="registerForm" (ngSubmit)="submitForm(registerForm)">
           <div class="mb-3">
             <input
               placeholder="Name"
@@ -57,9 +57,10 @@
             </button>
           </div>
         </form>
+        <app-spinner *ngIf="isLoading"></app-spinner>
       </div>
     </div>
-    <div *ngIf="done" class="text-center">
+    <div *ngIf="!isLoading&&done" class="text-center">
       <div class="alert alert-success text-center">Congratulations</div>
       <div class="alert alert-success text-center">
         Please check your inbox and verfiy your email

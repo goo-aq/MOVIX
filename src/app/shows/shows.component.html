@@ -1,102 +1,115 @@
-
-<div class="container bg-dark rounded px-5 pt-5 mb-5 position-relative h-100 mt-5">
-    <h3>Top Rated <i class="fa-solid fa-star"></i></h3>
-    <div class="row overflow-scroll flex-nowrap py-5 position-relative">
-      <div
-        class="hover col-6 col-md-2 text-center"
-        *ngFor="let show of topRatedShows"
+<div
+  class="container bg-dark rounded px-5 pt-5 mb-5 position-relative h-100 mt-5"
+>
+  <h3>Top Rated <i class="fa-solid fa-star"></i></h3>
+  <div
+    *ngIf="!isLoadingR"
+    class="row overflow-scroll flex-nowrap py-5 position-relative"
+  >
+    <div
+      class="hover col-6 col-md-2 text-center"
+      *ngFor="let show of topRatedShows"
+    >
+      <a
+        class="text-white text-decoration-none"
+        routerLink="/show/{{ show.id }}"
       >
-        <a
-          class="text-white text-decoration-none"
-          routerLink="/show/{{ show.id }}"
-        >
-          <img
-            src="https://image.tmdb.org/t/p/w500{{ show.poster_path }}"
-            alt=""
-            class="rounded w-100"
-          />
-          <h6 class="mt-2 overflow-hidden">{{ show.name }}</h6>
-          <span class="bg-red p-1 rounded"
-            >{{ show.vote_average | number : "1.0-1" }}
-            <i class="fa-solid fa-star"></i
-          ></span>
-        </a>
-      </div>
+        <img
+          src="https://image.tmdb.org/t/p/w500{{ show.poster_path }}"
+          alt=""
+          class="rounded w-100"
+        />
+        <h6 class="mt-2 overflow-hidden">{{ show.name }}</h6>
+        <span class="bg-red p-1 rounded"
+          >{{ show.vote_average | number : "1.0-1" }}
+          <i class="fa-solid fa-star"></i
+        ></span>
+      </a>
     </div>
   </div>
-  <div class="container bg-dark rounded px-5 pt-5 mb-5 position-relative h-100">
-    <h3>Trending today <i class="fa-solid fa-chart-simple"></i></h3>
-    <div class="row overflow-scroll flex-nowrap py-5 position-relative">
-      <div
-        class="hover col-6 col-md-2 text-center"
-        *ngFor="let show of trendShowsDay"
+  <app-spinner *ngIf="isLoadingR"></app-spinner>
+</div>
+<div class="container bg-dark rounded px-5 pt-5 mb-5 position-relative h-100">
+  <h3>Trending today <i class="fa-solid fa-chart-simple"></i></h3>
+  <div
+    *ngIf="!isLoadingTD"
+    class="row overflow-scroll flex-nowrap py-5 position-relative"
+  >
+    <div
+      class="hover col-6 col-md-2 text-center"
+      *ngFor="let show of trendShowsDay"
+    >
+      <a
+        class="text-white text-decoration-none"
+        routerLink="/show/{{ show.id }}"
       >
-        <a
-          class="text-white text-decoration-none"
-          routerLink="/show/{{ show.id }}"
-        >
-          <img
-            src="https://image.tmdb.org/t/p/w500{{ show.poster_path }}"
-            alt=""
-            class="rounded w-100"
-          />
-          <h6 class="mt-2 overflow-hidden">{{ show.name }}</h6>
-          <span class="bg-red p-1 rounded"
-            >{{ show.vote_average | number : "1.0-1" }}
-            <i class="fa-solid fa-star"></i
-          ></span>
-        </a>
-      </div>
+        <img
+          src="https://image.tmdb.org/t/p/w500{{ show.poster_path }}"
+          alt=""
+          class="rounded w-100"
+        />
+        <h6 class="mt-2 overflow-hidden">{{ show.name }}</h6>
+        <span class="bg-red p-1 rounded"
+          >{{ show.vote_average | number : "1.0-1" }}
+          <i class="fa-solid fa-star"></i
+        ></span>
+      </a>
     </div>
   </div>
-  <div class="container bg-dark rounded px-5 pt-5 mb-5 position-relative h-100">
-    <h3>Trending This Week <i class="fa-solid fa-arrow-trend-up"></i></h3>
-    <div class="row overflow-scroll flex-nowrap py-5 position-relative">
-      <div
-        class="hover col-6 col-md-2 text-center"
-        *ngFor="let show of trendShowsWeek"
+  <app-spinner *ngIf="isLoadingTD"></app-spinner>
+</div>
+<div class="container bg-dark rounded px-5 pt-5 mb-5 position-relative h-100">
+  <h3>Trending This Week <i class="fa-solid fa-arrow-trend-up"></i></h3>
+  <div
+    *ngIf="!isLoadingTW"
+    class="row overflow-scroll flex-nowrap py-5 position-relative"
+  >
+    <div
+      class="hover col-6 col-md-2 text-center"
+      *ngFor="let show of trendShowsWeek"
+    >
+      <a
+        class="text-white text-decoration-none"
+        routerLink="/show/{{ show.id }}"
       >
-        <a
-          class="text-white text-decoration-none"
-          routerLink="/show/{{ show.id }}"
-        >
-          <img
-            src="https://image.tmdb.org/t/p/w500{{ show.poster_path }}"
-            alt=""
-            class="rounded w-100"
-          />
-          <h6 class="mt-2 overflow-hidden">{{ show.name }}</h6>
-          <span class="bg-red p-1 rounded"
-            >{{ show.vote_average | number : "1.0-1" }}
-            <i class="fa-solid fa-star"></i
-          ></span>
-        </a>
-      </div>
+        <img
+          src="https://image.tmdb.org/t/p/w500{{ show.poster_path }}"
+          alt=""
+          class="rounded w-100"
+        />
+        <h6 class="mt-2 overflow-hidden">{{ show.name }}</h6>
+        <span class="bg-red p-1 rounded"
+          >{{ show.vote_average | number : "1.0-1" }}
+          <i class="fa-solid fa-star"></i
+        ></span>
+      </a>
     </div>
   </div>
-  <div class="container bg-dark rounded px-5 pt-5 mb-5 position-relative h-100">
-    <h3>Popular <i class="fa-solid fa-fire"></i></h3>
-    <div class="row overflow-scroll flex-nowrap py-5 position-relative">
-      <div
-        class="hover col-6 col-md-2 text-center"
-        *ngFor="let show of popShows"
+  <app-spinner *ngIf="isLoadingTW"></app-spinner>
+</div>
+<div class="container bg-dark rounded px-5 pt-5 mb-5 position-relative h-100">
+  <h3>Popular <i class="fa-solid fa-fire"></i></h3>
+  <div
+    *ngIf="!isLoadingP"
+    class="row overflow-scroll flex-nowrap py-5 position-relative"
+  >
+    <div class="hover col-6 col-md-2 text-center" *ngFor="let show of popShows">
+      <a
+        class="text-white text-decoration-none"
+        routerLink="/show/{{ show.id }}"
       >
-        <a
-          class="text-white text-decoration-none"
-          routerLink="/show/{{ show.id }}"
-        >
-          <img
-            src="https://image.tmdb.org/t/p/w500{{ show.poster_path }}"
-            alt=""
-            class="rounded w-100"
-          />
-          <h6 class="mt-2 overflow-hidden">{{ show.name }}</h6>
-          <span class="bg-red p-1 rounded"
-            >{{ show.vote_average | number : "1.0-1" }}
-            <i class="fa-solid fa-star"></i
-          ></span>
-        </a>
-      </div>
+        <img
+          src="https://image.tmdb.org/t/p/w500{{ show.poster_path }}"
+          alt=""
+          class="rounded w-100"
+        />
+        <h6 class="mt-2 overflow-hidden">{{ show.name }}</h6>
+        <span class="bg-red p-1 rounded"
+          >{{ show.vote_average | number : "1.0-1" }}
+          <i class="fa-solid fa-star"></i
+        ></span>
+      </a>
     </div>
   </div>
-  
+  <app-spinner *ngIf="isLoadingP"></app-spinner>
+</div>

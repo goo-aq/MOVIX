@@ -25,6 +25,7 @@ import { ShowComponent } from './show/show.component';
 import { ResultsComponent } from './results/results.component';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SpinnerComponent } from './spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     NotFoundComponent,
     ShowsComponent,
     ShowComponent,
-    ResultsComponent
+    ResultsComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,

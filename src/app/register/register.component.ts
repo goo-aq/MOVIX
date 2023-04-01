@@ -20,9 +20,12 @@ export class RegisterComponent {
   done: boolean = false;
   emailExist: string = '';
   errList: string[] = [];
+  isLoading:boolean=false;
   submitForm(data: FormGroup) {
+    this.isLoading=true;
     this._AuthService.register(data.value).subscribe({
       next: (res) => {
+        this.isLoading=false;
         this.emailExist='';
         this.errList=[];
         if (res.message == 'success') {
@@ -35,6 +38,7 @@ export class RegisterComponent {
         }
       },
       error: (err) => {
+        this.isLoading=false;
         if (err.status == 409) {
           this.emailExist = 'Email already used';
         }

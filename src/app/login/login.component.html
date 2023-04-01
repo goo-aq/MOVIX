@@ -5,7 +5,11 @@
         <h2>Login</h2>
       </div>
       <div class="col-md-4">
-        <form [formGroup]="loginForm" (ngSubmit)="submitForm(loginForm)">
+        <form
+          *ngIf="!isLoading"
+          [formGroup]="loginForm"
+          (ngSubmit)="submitForm(loginForm)"
+        >
           <div class="mb-3">
             <input
               type="email"
@@ -29,13 +33,14 @@
               {{ emailVerify }}
             </div>
             <div *ngIf="err" class="alert alert-danger text-center">
-              Error [please check your information]
+              Please check your information!
             </div>
             <button type="submit" class="btn bg-red text-white w-100">
               Login
             </button>
           </div>
         </form>
+        <app-spinner *ngIf="isLoading"></app-spinner>
       </div>
     </div>
   </div>
