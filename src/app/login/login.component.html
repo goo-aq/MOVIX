@@ -1,1 +1,42 @@
-<p>login works!</p>
+<div class="py-5">
+  <div class="wlcard mt-5">
+    <div class="row justify-content-center">
+      <div class="text-center mb-5">
+        <h2>Login</h2>
+      </div>
+      <div class="col-md-4">
+        <form [formGroup]="loginForm" (ngSubmit)="submitForm(loginForm)">
+          <div class="mb-3">
+            <input
+              type="email"
+              placeholder="Email"
+              class="form-control"
+              id="email"
+              formControlName="email"
+            />
+          </div>
+          <div class="mb-3">
+            <input
+              type="password"
+              placeholder="Password"
+              class="form-control"
+              id="password"
+              formControlName="password"
+            />
+          </div>
+          <div class="mb-3">
+            <div *ngIf="emailVerify" class="alert alert-danger text-center">
+              {{ emailVerify }}
+            </div>
+            <div *ngIf="err" class="alert alert-danger text-center">
+              Error [please check your information]
+            </div>
+            <button type="submit" class="btn bg-red text-white w-100">
+              Login
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

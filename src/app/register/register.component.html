@@ -1,69 +1,69 @@
 <div class="py-5">
   <div class="wlcard mt-5">
     <div *ngIf="!done" class="row justify-content-center">
+      <div class="text-center mb-5">
+        <h2>Register</h2>
+      </div>
       <div class="col-md-4">
-        <form
-          [formGroup]="registerForm"
-          (ngSubmit)="submitForm(registerForm)"
-          class="d-flex flex-column"
-        >
-          <div class="row mb-3">
-            <label for="name" class="col-sm-2 col-form-label">Name</label>
-            <div class="col-sm-10">
-              <input
-                type="text"
-                class="form-control"
-                id="name"
-                formControlName="name"
-              />
-            </div>
+        <form [formGroup]="registerForm" (ngSubmit)="submitForm(registerForm)">
+          <div class="mb-3">
+            <input
+              placeholder="Name"
+              type="text"
+              class="form-control"
+              id="name"
+              formControlName="name"
+            />
           </div>
-          <div class="row mb-3">
-            <label for="email" class="col-sm-2 col-form-label">Email</label>
-            <div class="col-sm-10">
-              <input
-                type="email"
-                class="form-control"
-                id="email"
-                formControlName="email"
-              />
-            </div>
+          <div class="mb-3">
+            <input
+              placeholder="Email"
+              type="email"
+              class="form-control"
+              id="email"
+              formControlName="email"
+            />
           </div>
-          <div class="row mb-3">
-            <label for="password" class="col-sm-2 col-form-label"
-              >Password</label
+          <div class="mb-3">
+            <input
+              placeholder="Password"
+              type="password"
+              class="form-control"
+              id="password"
+              formControlName="password"
+            />
+          </div>
+          <div class="mb-3">
+            <input
+              placeholder="Confirm Password"
+              type="password"
+              class="form-control"
+              id="cpassword"
+              formControlName="cPassword"
+            />
+          </div>
+          <div class="mb-3">
+            <div *ngIf="emailExist" class="alert alert-danger text-center">
+              {{ emailExist }}
+            </div>
+            <div
+              class="alert alert-danger text-center"
+              *ngFor="let err of errList"
             >
-            <div class="col-sm-10">
-              <input
-                type="password"
-                class="form-control"
-                id="password"
-                formControlName="password"
-              />
+              {{ err }}
             </div>
+            <button type="submit" class="btn bg-red text-white w-100">
+              Register
+            </button>
           </div>
-          <div class="row mb-3">
-            <label for="cPassword" class="col-sm-2 col-form-label"
-              >Password Confirm</label
-            >
-            <div class="col-sm-10">
-              <input
-                type="password"
-                class="form-control"
-                id="cpassword"
-                formControlName="cPassword"
-              />
-            </div>
-          </div>
-          <div *ngIf="emailExist" class="alert alert-danger">{{ emailExist }}</div>
-          <div class="alert alert-danger" *ngFor="let err of errList">{{ err }}</div>
-          <button type="submit" class="btn bg-red text-white">Register</button>
         </form>
       </div>
     </div>
     <div *ngIf="done" class="text-center">
-      <div class="alert alert-success">Congratulations</div>
-      <div class="alert alert-success">Please check your inbox and verfiy your email</div>
+      <div class="alert alert-success text-center">Congratulations</div>
+      <div class="alert alert-success text-center">
+        Please check your inbox and verfiy your email
+      </div>
     </div>
   </div>
 </div>
