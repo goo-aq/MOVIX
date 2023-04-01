@@ -36,3 +36,36 @@
   .mdc-tab-indicator__content--underline {
   border-color: var(--mdc-tab-indicator-active-indicator-color, white);
 }
+
+.container {
+  --bs-bg-opacity: 0.5;
+}
+h6 {
+  height: 40px;
+}
+.container::after {
+  width: 40%;
+  height: 100%;
+  right: 0;
+  top: 0;
+  content: "";
+  position: absolute;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 1) 80%
+  );
+}
+.container:hover::after {
+  width: 0;
+}
+@media (max-width: 549px) {
+  ::ng-deep .mat-mdc-tab .mdc-tab__text-label,
+  ::ng-deep .mat-mdc-tab-link .mdc-tab__text-label {
+    font-size: 20px;
+  }
+.container{
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+}

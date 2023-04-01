@@ -21,4 +21,22 @@
   h6 {
     height: 6vh;
   }
+  @media (max-width: 549px) {
+    .row:not(.recommend .row) {
+      justify-content: center;
+    }
+    .col {
+      text-align: center;
+    }
+    .show {
+      padding-top: 10rem;
+    }
+    .ms-3 {
+      margin-left: 0 !important;
+    }
+    .gap-5 {
+      gap: 1rem !important;
+      padding-bottom: 3rem;
+    }
+  }
   

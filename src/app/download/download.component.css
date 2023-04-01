@@ -57,3 +57,9 @@ span:last-of-type {
     transform: rotate(360deg);
   }
 }
+
+@media (max-width: 549px) {
+  .row{
+    flex-direction: column-reverse;
+  }
+}

@@ -36,3 +36,9 @@
   .mdc-tab-indicator__content--underline {
   border-color: var(--mdc-tab-indicator-active-indicator-color, white);
 }
+@media (max-width: 549px) {
+  ::ng-deep .mat-mdc-tab .mdc-tab__text-label,
+  ::ng-deep .mat-mdc-tab-link .mdc-tab__text-label {
+    font-size: 20px;
+  }
+}

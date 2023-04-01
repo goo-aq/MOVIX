@@ -43,3 +43,16 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+@media (max-width: 549px) {
+  .wlcard h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+  }
+  .wlcard p {
+    font-size: 1.125rem;
+    font-weight: 400;
+    margin: 1rem 0 0;
+    text-align: center;
+  }
+}

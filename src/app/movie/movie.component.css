@@ -4,10 +4,9 @@
   background-size: cover;
   opacity: 0.3;
   z-index: -9999;
-  
 }
 .movie {
-  padding-top: 8rem
+  padding-top: 8rem;
 }
 .hplay {
   opacity: 0;
@@ -20,4 +19,22 @@
 }
 h6 {
   height: 6vh;
+}
+@media (max-width: 549px) {
+  .row:not(.recommend .row) {
+    justify-content: center;
+  }
+  .col {
+    text-align: center;
+  }
+  .movie {
+    padding-top: 10rem;
+  }
+  .ms-3 {
+    margin-left: 0 !important;
+  }
+  .gap-5 {
+    gap: 1rem !important;
+    padding-bottom: 3rem;
+  }
 }
